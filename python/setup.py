@@ -155,17 +155,12 @@ def install_requires():
         'requests >=2.0, <3',
         'more-itertools >=8.6',
         'numpy >=1.19, <2, !=1.19.4',
-        # scipy is not supported on Mac M1 with Mac OS < 12.0
         'scipy >=1.7, <2',
         'typing-extensions >=3.7.4.3',
         'Pillow >=9.2',
         'packaging',
         'setuptools; python_version >= "3.12"',
     ]
-    env = os.environ.copy()
-    skip_mapping = env.get('OUSTER_SDK_SKIP_MAPPING')
-    if not skip_mapping:
-        install_requires.append('ouster-mapping==0.2.1; python_version >= "3.8" and python_version <= "3.12"')
 
     return install_requires
 
